@@ -10,6 +10,14 @@ I just wanted a way to see if a process was already running and if not, run
 the damn code. I also wanted to do this in a very simple fashion, by way of a
 callback. And thus, I give you `simple-pid`.
 
+## Installation
+
+Usual shit:
+
+```shell
+npm install simple-pid
+```
+
 ## Usage
 
 ```javascript
@@ -33,3 +41,10 @@ the code in the callback will be executed.
 You know it! Because this module writes to the `/var/run` directory it requires
 write access to that directory. This is best accomplished by running your script
 as root or by way of `sudo`.
+
+## Wait, no cleanup?
+
+Nah, I felt that cleaning up the PID file (by removing it post-execution) was
+just an unnecessary layer that could be omitted. Could you run into some sort of
+PID collision? Never say never, but thus far we haven’t seen any fallout from
+this and I really did want to keep the code as stupid simple as possible.
